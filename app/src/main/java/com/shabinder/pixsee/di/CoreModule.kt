@@ -21,13 +21,14 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object CoreModule {
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @Provides
     @Singleton
     fun provideFaceDetectorHelper(
         @ApplicationContext context: Context
     ): FaceDetector {
-        val dispatcher = Dispatchers.IO.limitedParallelism(4)
+        // Default dispatcher, limited Thread Pool for CPU Intensive tasks
+        // To Limit Parallelism more, use Dispatcher.limitedParallelism(n)
+        val dispatcher = Dispatchers.Default
         val config = FaceDetectionConfig()
         return OnDeviceFaceDetectorHelper(
             context = context,
