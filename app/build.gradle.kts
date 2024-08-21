@@ -24,10 +24,14 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
+
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            // TESTING ONLY TODO(Remove)
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
@@ -74,8 +78,10 @@ dependencies {
     implementation(libs.hilt.compose)
     ksp(libs.hilt.compiler)
 
+    implementation(libs.room.ktx)
     implementation(libs.room.runtime)
     implementation(libs.room.paging)
+    implementation(libs.room.paging.compose)
     ksp(libs.room.compiler)
 
     implementation(libs.media.pipe.vision)

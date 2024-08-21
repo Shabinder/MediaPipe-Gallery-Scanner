@@ -40,9 +40,11 @@ hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.r
 kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version = "1.8.1" }
 kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version = "1.6.3" }
 
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
+room-paging-compose = { group = "androidx.paging", name = "paging-compose", version = "3.3.2" }
 
 media-pipe-vision = { group = "com.google.mediapipe", name = "tasks-vision", version = "0.10.14" }
 

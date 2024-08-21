@@ -16,7 +16,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 
 @Composable
-fun PermissionScreenUI(onPermissionGranted: () -> Unit) {
+fun PermissionScreenUI(
+    modifier: Modifier = Modifier,
+    onPermissionGranted: () -> Unit
+) {
     val context = LocalContext.current
 
     val permissionLauncher = rememberLauncherForActivityResult(
@@ -31,7 +34,7 @@ fun PermissionScreenUI(onPermissionGranted: () -> Unit) {
     )
 
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
