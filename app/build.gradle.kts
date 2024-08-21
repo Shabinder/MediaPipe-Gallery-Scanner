@@ -29,9 +29,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-
-            // TESTING ONLY TODO(Remove)
-            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
